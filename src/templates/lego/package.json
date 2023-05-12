@@ -9,13 +9,13 @@
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "dependencies": {
-    "@lego/lego": "latest"
+    "@lego/lego": "../../lego"
   },
   "peerDependencies": {
-    "@lego/lego": "latest"
+    "@lego/lego": ""
   },
   "devDependencies": {
-    "@msgpack/msgpack": "latest",
+    "@msgpack/msgpack": "2.8.0",
     "@bitjourney/check-es-version-webpack-plugin": "latest",
     "@types/jest": "latest",
     "@types/node": "latest",
@@ -33,10 +33,8 @@
   "scripts": {
     "clean": "rimraf build dist dist.*",
     "prepare": "yarn clean && webpack --bail && tsc --build tsconfig.dist.json tsconfig.dist.es5+esm.json && ts-node tools/esmify.ts dist.es5+esm/*.js dist.es5+esm/*/*.js",
-    "start": "webpack watch",
-    "test": "jest --config jestconfig.json",
-    "release": "webpack --env production",
-    "build": "tsc"
+    "start": "prepare watch",
+    "test": "jest --config jestconfig.json"
   },
   "engines": {
     "node": ">= 14"

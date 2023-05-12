@@ -109,7 +109,7 @@ function replaceProjectName(
   const options4 = {
     files: path.join(projectPath, 'pubspec.yaml'),
     from: /ts_project/g,
-    to: packageName.replace(/-/g, '_'),
+    to: projectName.replace(/-/g, '_'),
   };
   const optionsTo = [options, options2, options3, options4];
   optionsTo.forEach((options) => {

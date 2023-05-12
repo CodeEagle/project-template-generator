@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "ts-node src/index.ts",
-    "build": "rm -rf dist && tsc && shx rm -rf dist/templates && shx cp -r src/templates dist"
+    "build": "rm -rf dist && tsc && shx rm -rf dist/templates && shx cp -r src/templates dist && chmod +x ./dist/index.js"
   },
   "bin": {
     "generate-template": "./dist/index.js"
