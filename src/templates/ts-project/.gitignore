@@ -1,0 +1,12 @@
+*/**/node_modules/
+node_modules/
+
+dist/
+dist.es5+esm/
+dist.es5+umd/
+
+*/**/dist/
+*/**/dist.es5+esm/
+*/**/dist.es5+umd/
+
+*.lock

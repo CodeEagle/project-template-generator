@@ -1,0 +1,43 @@
+{
+  "name": "ts-project",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "module": "./dist.es5+esm/index.mjs",
+  "cdn": "./dist.es5+umd/ts-project.js",
+  "unpkg": "./dist.es5+umd/ts-project.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "devDependencies": {
+    "@bitjourney/check-es-version-webpack-plugin": "latest",
+    "@types/jest": "latest",
+    "@types/node": "latest",
+    "@types/lodash": "latest",
+    "jest": "latest",
+    "ts-jest": "latest",
+    "ts-loader": "latest",
+    "typescript": "latest",
+    "webpack": "latest",
+    "webpack-cli": "latest",
+    "ts-node": "latest",
+    "rimraf": "latest",
+    "lodash": "latest"
+  },
+  "scripts": {
+    "clean": "rimraf build dist dist.*",
+    "prepare": "yarn clean && webpack --bail && tsc --build tsconfig.dist.json tsconfig.dist.es5+esm.json && ts-node tools/esmify.ts dist.es5+esm/*.js dist.es5+esm/*/*.js",
+    "start": "webpack watch",
+    "test": "jest --config jestconfig.json",
+    "release": "webpack --env production",
+    "build": "tsc"
+  },
+  "engines": {
+    "node": ">= 14"
+  },
+  "files": [
+    "src/**/*.*",
+    "dist/**/*.*",
+    "dist.es5+esm/**/*.*",
+    "dist.es5+umd/**/*.*"
+  ]
+}
