@@ -1,0 +1,23 @@
+name: ts_project
+description: project
+version: 0.0.1
+publish_to: none
+environment:
+  sdk: '>=2.18.0 <3.0.0'
+  flutter: '>=1.17.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  lego: any
+  js_adapter: any
+dependency_overrides:
+  lego:
+    path: ../../lego
+  js_adapter:
+    path: ../js_adapter
+dev_dependencies:
+  path: any
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+flutter: null
